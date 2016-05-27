@@ -1,0 +1,77 @@
+<?php
+ 
+namespace Export2Pdf;
+
+if ( ! defined( 'EXPORT2PDF_LOADED' ) ) 
+  die();
+
+// TODO: add formatting as a repeatable field
+
+/**
+ * Format as a repeatable field
+ */
+ 
+class Format_Repeatable extends Format
+{
+  
+  public $name = 'Repeatable';
+  
+  public function default_options()
+  {
+    return array(
+      'repeatable_format' => '',
+    );
+  }
+  
+  public function process( $value, $options = array() )
+  {
+    extract( $options );
+    $value = self::_format( $repeatable_format, $value );
+    return $value;
+  }
+  
+  public static function _format( $repeatable_format, $text )
+  {
+   
+    // TODO: Format repeatable
+   
+    return $text;
+    
+  }
+  
+  public function show_options( $map = NULL )
+  {
+  
+    ob_start();
+    
+    ?>
+    
+      <tr class="export2pdf-additional-options">
+        
+        <th scope="row">
+          <label for="map_formating">
+            Repeatable Format
+          </label>
+        </th>
+        
+        <td>
+          
+          <textarea style="height: 170px;" class="regular-text" name="options[repeatable_format]"><?php echo esc_html( $map->option( 'repeatable_format' ) ); ?></textarea>
+          
+          <p class="description">
+            Each shortcode will be replaced by the field value.
+          </p>
+          
+        </td>
+        
+      </tr>
+    
+    <?php
+    
+    return ob_get_clean();
+    
+  }
+  
+}
+
+

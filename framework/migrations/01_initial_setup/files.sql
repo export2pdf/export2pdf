@@ -1,0 +1,10 @@
+CREATE TABLE IF NOT EXISTS `{prefix}files`
+(
+  `id` INT(15) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `type` VARCHAR(100) NOT NULL DEFAULT 'PdfFile',
+  `name` VARCHAR(255),
+  `hash` VARCHAR(255),
+  `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` TIMESTAMP,
+  PRIMARY KEY(`id`)
+) CHARSET={charset}

@@ -1,0 +1,1 @@
+(function(){jQuery(document).ready(function(b){var a;a=b('[name="template[flatten]"]');return a.change(function(){var c,d;c=a.filter(":checked").val();c=parseInt(c);d=b("#template_optimization");if(c>0){return d.stop().fadeIn(250)}else{return d.stop().fadeOut(250)}})})}).call(this);

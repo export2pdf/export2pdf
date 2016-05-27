@@ -1,0 +1,1 @@
+(function(){jQuery(document).ready(function(a){a(".export2pdf-commit input").focus();return a(".export2pdf-commit").submit(function(){a(this).find("button").prop("disabled",true);return true})})}).call(this);

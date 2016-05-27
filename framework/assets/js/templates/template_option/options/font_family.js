@@ -1,0 +1,1 @@
+(function(){jQuery(document).ready(function(b){var a;a=b(".export2pdf-selected");if(a.length){return location.hash=a.data("value")}})}).call(this);

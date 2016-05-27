@@ -1,0 +1,10 @@
+CREATE TABLE IF NOT EXISTS `{prefix}options`
+(
+  `id` INT(15) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `key` VARCHAR(100),
+  `value` TEXT,
+  `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` TIMESTAMP,
+  PRIMARY KEY(`id`),
+  UNIQUE(`key`)
+) CHARSET={charset}

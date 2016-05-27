@@ -1,0 +1,1 @@
+(function(){jQuery(document).ready(function(a){if(a.fn.tipTip){return a(".order_actions .export-to-pdf").tipTip()}})}).call(this);

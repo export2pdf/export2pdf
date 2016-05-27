@@ -1,0 +1,1 @@
+(function(){jQuery(document).ready(function(a){return a('[name="option_value"]').wpColorPicker()})}).call(this);

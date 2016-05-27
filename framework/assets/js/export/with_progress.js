@@ -1,0 +1,1 @@
+(function(){window.export2pdf_fatal_progress_error=function(a){document.getElementById("inner-content").innerHTML=a.error;return document.getElementById("inner-content").className+=" with-error"}}).call(this);

@@ -1,0 +1,26 @@
+<?php
+
+namespace Export2Pdf;
+
+if ( ! defined( 'EXPORT2PDF_LOADED' ) ) 
+  die();
+
+// TODO: add timeouts
+
+/**
+ * Check what is the PHP maximum execution time on this server
+ */
+ 
+class Test_Timeout extends Test
+{
+
+  const NAME = "Timeouts";
+
+  public function execute()
+  {
+  
+    throw new Exception( "TODO!" );
+    
+  }
+
+}
