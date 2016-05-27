@@ -14,8 +14,10 @@ class FormValue
 
   public $entry;
   public $field;
+  public $map;
   
-  public $value;
+  public $value;             // Field value as string
+  public $values = NULL;     // Some fields may have multiple values
 
   /**
    * Get form
@@ -54,7 +56,50 @@ class FormValue
    */
   public function get_value()
   {
-    return $this->value;
+  
+    $value = $this->value;
+    
+    if ( $this->map )
+    {
+    
+      // If the corresponding PDF field is a checkbox or a radio,
+      // then we need to select only valid values
+      $pdf_field      = $this->map->field();
+    
+      if (
+           ( $pdf_field instanceof PdfField_Radio )
+        or ( $pdf_field instanceof PdfField_Checkbox )
+      )
+      {
+      
+        $valid_values = $pdf_field->values();
+        
+        // If this value is invalid, then let's go through all submitted values
+        if ( ! in_array( $value, $valid_values ) )
+        {
+        
+          // Let's see if this form value has a list of values
+          if ( 
+                $this->values
+            and is_array( $this->values )
+            and count( $this->values )
+          )
+          {
+            
+            foreach ( $this->values as $possible_value )
+              if ( in_array( $possible_value, $valid_values ) )
+                return $possible_value;
+            
+          }
+          
+        }
+      
+      }
+    
+    }
+            
+    return $value;
+    
   }
 
 }

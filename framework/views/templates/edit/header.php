@@ -20,9 +20,14 @@
   <h1>
     <?php
       if ( $template->id() )
-        echo 'Edit Template <strong>' . $template->name() . '</strong>';
+      {
+        printf(
+          __( 'Edit Template <strong>%s</strong>', 'export2pdf' ),
+          $template->name()
+        );
+      }
       else
-        echo 'Create a Template';
+        echo __( 'Create a Template', 'export2pdf' );
     ?>
   </h1>
   
@@ -34,10 +39,10 @@
           
             // List of steps to create a template
             $steps = array( 
-              'edit_step1' => 'Choose Name',
-              'edit_step2' => 'Select PDF',
-              'edit_step3' => 'Map Fields',
-              'edit_step4' => 'Settings',
+              'edit_step1' => __( 'Choose Name', 'export2pdf' ),
+              'edit_step2' => __( 'Select PDF', 'export2pdf' ),
+              'edit_step3' => __( 'Map Fields', 'export2pdf' ),
+              'edit_step4' => __( 'Settings', 'export2pdf' ),
             );
             
             // Display the steps as a chain of links
@@ -102,13 +107,13 @@
           
           -->
           
-          <a href="#" class="button button-primary export2pdf-next-step">Next Step &raquo;</a>
+          <a href="#" class="button button-primary export2pdf-next-step"><?php _e( 'Next Step', 'export2pdf' ); ?> &raquo;</a>
           
           <?php if ( count( $entries = $template->form()->entries() ) ): // If form has some entries, display a preview button ?>
           
             <a href="#" data-url="<?php 
               echo \Export2Pdf\ShortcodeExport::generate_link( $template, $entries[ 0 ] );
-            ?>" class="button export2pdf-preview-button" target="_blank">Save &amp; Preview</a>
+            ?>" class="button export2pdf-preview-button" target="_blank"><?php echo esc_attr( __( 'Save & Preview', 'export2pdf' ) ); ?></a>
           
           <?php endif; ?>
           

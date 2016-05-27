@@ -1,5 +1,8 @@
 <?php
 
+if ( ! defined( 'EXPORT2PDF_LOADED' ) ) 
+  die();
+
 /**
  * Links in the list of orders to export to PDF
  *

@@ -1,0 +1,1 @@
+(function(){jQuery(document).ready(function(a){return a(".export2pdf-delete-translation").click(function(){var c,b;b=a(this).parents("tr");c=b.data("id");b.remove();a.ajax({method:"POST",data:{remove_translation:c}});return false})})}).call(this);

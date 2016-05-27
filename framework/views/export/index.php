@@ -10,7 +10,7 @@
   <?php if ( ! $is_modal ): ?>
 
     <h1>
-      Export to PDF
+      <?php _e( 'Export to PDF', 'export2pdf' ); ?>
     </h1>
     
     <div class="wp-filter"> 

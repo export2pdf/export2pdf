@@ -2,13 +2,193 @@
 # This file is distributed under the same license as the Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2016-05-16 18:18:41+0000\n"
+"PO-Revision-Date: 2016-05-27 19:00:31+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
 "X-Generator: Export2pdf/2.1.0-alpha\n"
 "Project-Id-Version: Export2pdf\n"
+          
+#: translation 178
+msgid "New Template"
+msgstr "Новый шаблон"
+          
+#: translation 177
+msgid "Downloading <a href=\"%s\">%s</a>..."
+msgstr "Загрузка <a href=\"%s\">%s</a>..."
+          
+#: translation 174
+msgid "Downloading %s ..."
+msgstr "Загрузка %s ..."
+          
+#: translation 175
+msgid "Exporting..."
+msgstr "Экспортирование..."
+          
+#: translation 176
+msgid "Preparing file..."
+msgstr "Подготовка файла..."
+          
+#: translation 173
+msgid "Your PDF file is shown below. Click on a PDF form field to change its options."
+msgstr "Ваш файл PDF показан ниже. Нажмите на поле формы PDF, чтобы изменить его параметры."
+          
+#: translation 165
+msgid "Edit Template <strong>%s</strong>"
+msgstr "Редактирование шаблона <strong>%s</strong>"
+          
+#: translation 166
+msgid "Choose Name"
+msgstr "Выбoр название"
+          
+#: translation 167
+msgid "Select PDF"
+msgstr "Выбoр PDF"
+          
+#: translation 168
+msgid "Map Fields"
+msgstr "Поля"
+          
+#: translation 169
+msgid "Next Step"
+msgstr "Следующий шаг"
+          
+#: translation 170
+msgid "Save & Preview"
+msgstr "Предпросмотр"
+          
+#: translation 171
+msgid "Loading"
+msgstr "Загрузка"
+          
+#: translation 172
+msgid "Text that you write below will be transformed into a PDF."
+msgstr "Текст, который вы пишете ниже, будeт преобразован в PDF."
+          
+#: translation 164
+msgid "Create a template"
+msgstr "Создать шаблон"
+          
+#: translation 156
+msgid "Imperial (inches)"
+msgstr "Дюймы"
+          
+#: translation 157
+msgid "Metric (millimeters)"
+msgstr "Миллиметры"
+          
+#: translation 158
+msgid "Useful when changing PDF page margins."
+msgstr "Используется при изменении полей PDF страниц."
+          
+#: translation 159
+msgid "Show a progress bar while exporting to PDF"
+msgstr "Показывать индикатор прогресса при экспорте в PDF"
+          
+#: translation 160
+msgid "Don't show a progress bar, and download PDF without redirections"
+msgstr "Не показывать индикатор прогресса и скачать PDF без редиректа"
+          
+#: translation 161
+msgid "This window shows up when you click a link to download your PDF file."
+msgstr "Это окно появляется при нажатии на ссылку, чтобы загрузить файл PDF."
+          
+#: translation 162
+msgid "Enable debug mode (for advanced users)"
+msgstr "Включить режим отладки (для продвинутых пользователей)"
+          
+#: translation 163
+msgid "Shows more information about what's happening behind the scenes."
+msgstr "Показывает больше информации о том, что происходит."
+          
+#: translation 152
+msgid "Original"
+msgstr "Текст на английском языке"
+          
+#: translation 153
+msgid "Translated"
+msgstr "Перевод"
+          
+#: translation 154
+msgid "Delete this translation"
+msgstr "Удалить этот перевод"
+          
+#: translation 155
+msgid "Do you really want to remove this translation?"
+msgstr "Вы действительно хотите удалить этот перевод?"
+          
+#: translation 57
+msgid "Measurement units"
+msgstr "Eдиницы измерения"
+          
+#: translation 58
+msgid "Download window"
+msgstr "Oкно загрузки "
+          
+#: translation 59
+msgid "Debugging"
+msgstr "Oтладка"
+          
+#: translation 46
+msgid "Select entry:"
+msgstr "Выберите запись:"
+          
+#: translation 47
+msgid "New Entry"
+msgstr "Новая запись"
+          
+#: translation 48
+msgid "Template %s is is designed to work with form %s which has %s."
+msgstr "Шаблон %s предназначен для работы с формой %s, которая имеет %s."
+          
+#: translation 49
+msgid "Shortcode:"
+msgstr "Шорткод"
+          
+#: translation 50
+msgid "Copy"
+msgstr "Cкопировать"
+          
+#: translation 51
+msgid "You can copy-paste the shortcode above to use it on your pages or posts."
+msgstr "Вы можете скопировать и вставить шорткод  чтобы использовать его на страницах."
+          
+#: translation 52
+msgid "You can also use shortcode builder button in the WordPress editor."
+msgstr "Вы можете также использовать кнопку \"Bставить шорткод\" в редакторе WordPress."
+          
+#: translation 53
+msgid "Download PDF"
+msgstr "Скачать PDF"
+          
+#: translation 54
+msgid "Click the button above to export your entry into a PDF file."
+msgstr "Нажмите на кнопку, чтобы экспортировать запись в файл PDF."
+          
+#: translation 55
+msgid "Insert Shortcode"
+msgstr "Вставить шорткод"
+          
+#: translation 56
+msgid "Cancel"
+msgstr "Отмена"
+          
+#: translation 43
+msgid "Grid View"
+msgstr "Сетка"
+          
+#: translation 44
+msgid "List View"
+msgstr "Список"
+          
+#: translation 45
+msgid "Select template:"
+msgstr "Выберите шаблон:"
+          
+#: translation 42
+msgid "Translations have been saved."
+msgstr "Переводы были сохранены."
           
 #: translation 41
 msgid "Save"
@@ -29,3 +209,7 @@ msgstr "Hастройки"
 #: translation 39
 msgid "Translations"
 msgstr "Переводы"
+          
+#: translation 40
+msgid "Under the Hood"
+msgstr "Что внутри"

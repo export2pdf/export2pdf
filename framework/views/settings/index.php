@@ -8,7 +8,7 @@
 <div class="wrap export2pdf">
 
   <h1>
-    Settings
+    <?php _e( 'Settings', 'export2pdf' ); ?>
   </h1>
 
   <form method="POST">
@@ -17,7 +17,7 @@
     
       <div class="updated inline">
         <p>
-          Settings have been saved.
+          <?php _e( 'Settings have been saved.', 'export2pdf' ); ?>
         </p>
       </div>
     
@@ -43,8 +43,8 @@
               <?php 
               
                 $options = array(
-                  'in' => 'Imperial (inches)',
-                  'mm' => 'Metric (millimeters)',
+                  'in' => __( 'Imperial (inches)', 'export2pdf' ),
+                  'mm' => __( 'Metric (millimeters)', 'export2pdf' ),
                 );
                 
                 $current_value = \Export2Pdf\Settings::get( 'measurement_unit' );
@@ -68,7 +68,7 @@
             </fieldset>
             
             <p class="description">
-              Useful when changing PDF page margins.
+              <?php _e( 'Useful when changing PDF page margins.', 'export2pdf' ); ?>
             </p>
           
         </tr>
@@ -92,8 +92,8 @@
               <?php 
               
                 $options = array(
-                  '1' => "Show a progress bar while exporting to PDF",
-                  '0' => "Don't show a progress bar, and download PDF without redirections",
+                  '1' => __( "Show a progress bar while exporting to PDF", 'export2pdf' ),
+                  '0' => __( "Don't show a progress bar, and download PDF without redirections", 'export2pdf' ),
                 );
                 
                 $current_value = \Export2Pdf\Settings::get( 'download_show_progress' );
@@ -117,7 +117,7 @@
             </fieldset>
             
             <p class="description">
-              This window shows up when you click a link to download your PDF file.
+              <?php _e( 'This window shows up when you click a link to download your PDF file.', 'export2pdf' ); ?>
             </p>
           
         </tr>
@@ -138,7 +138,7 @@
           
           <td>
           
-            Your API key is
+            <?php _e( 'Your API key is', 'export2pdf' ); ?>
             
             <strong>
               <?php echo \Export2Pdf\Api::key(); ?>
@@ -181,13 +181,13 @@
                     value="1" 
                     <?php if ( \Export2Pdf\Debug::enabled() ) echo ' checked="checked"'; ?> 
                   />
-                  Enable debug mode (for advanced users)
+                  <?php _e( 'Enable debug mode (for advanced users)', 'export2pdf' ); ?>
                 </label>
             
             </fieldset>
             
             <p class="description">
-              Shows more information about what's happening behind the scenes.
+              <?php _e( "Shows more information about what's happening behind the scenes.", 'export2pdf' ); ?>
             </p>
           
         </tr>

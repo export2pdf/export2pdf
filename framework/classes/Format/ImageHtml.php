@@ -23,7 +23,9 @@ class Format_ImageHtml extends Format
   public function process( $value, $options = array() )
   {
     
-    // If this is an HTML template, then convert image src to <img /> tag
+    $value = Tools::trim( $value );
+    
+    // This is an HTML template, so convert image src to <img /> tag
     return "<img src='$value' />";
     
   }

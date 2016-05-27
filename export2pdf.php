@@ -3,7 +3,7 @@
 Plugin Name: Export2PDF
 Plugin URI: http://www.export2pdf.com/
 Description: Easily export data to PDF files. Works with WooCommerce, Formidable and WordPress posts.
-Version: 1.0.1
+Version: 1.0.2
 Author: Export2PDF
 Author URI: http://www.export2pdf.fr/
 License: AGPL

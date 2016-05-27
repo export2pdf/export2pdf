@@ -1,0 +1,15 @@
+# Translation of Stable (latest release) in French (France)
+# This file is distributed under the same license as the Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2016-05-27 19:00:30+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Export2pdf/2.1.0-alpha\n"
+"Project-Id-Version: Export2pdf\n"
+          
+#: translation 188
+msgid "Don't show a progress bar, and download PDF without redirections"
+msgstr "Don't show a progress bar, and download PDF without redirects"

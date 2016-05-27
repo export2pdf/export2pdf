@@ -1,1 +1,0 @@
-[Download](https://downloads.wordpress.org/plugin/export2pdf.zip) or [visit WordPress.org plugin page](https://wordpress.org/plugins/export2pdf/)

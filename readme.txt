@@ -2,17 +2,15 @@
 Contributors: export2pdf
 Donate link: http://www.export2pdf.com/
 Tags: shortcode, posts, export, pdf
-Requires at least: 3.0.1
+Requires at least: 4.0.0
 Tested up to: 4.5.2
-Stable tag: 1.01
-License: AGPL
-License URI: http://www.gnu.org/licenses/agpl-3.0.en.html
+Stable tag: 1.02
+License: GPL
+License URI: http://www.gnu.org/licenses/gpl-3.0.en.html
 
-Easily export to PDF file WooCommerce invoices, Formidable Forms, WordPress posts.
+Easily export WooCommerce invoices, Formidable Forms and WordPress posts to PDF.
 
 == Description ==
-
-Easily export to PDF file WooCommerce invoices, Formidable Forms, WordPress posts.
 
 = Features =
 
@@ -26,6 +24,27 @@ Easily export to PDF file WooCommerce invoices, Formidable Forms, WordPress post
 * Shortcodes
 * Supports special UTF-8 characters (Ó, ć, Á, ń, Đ, ů, etc.)
 * ... and more in the future updates.
+
+= Formidable Forms =
+
+These field types are supported: 
+
+* Single line text
+* Paragraph text
+* Checkboxes
+* Radio buttons
+* Dropdown
+* Email address
+* Website/URL 
+* Number
+* Phone number
+* Date
+* Time
+* Image URL
+
+Also,
+
+* PDFs can be attached to notifications
 
 == Installation ==
 
@@ -71,16 +90,22 @@ We can integrate almost any WordPress plugin with our PDF generation software.
 
 = Licence =
 
-This plugin is licenced under [AGPL licence](http://www.gnu.org/licenses/agpl-3.0.en.html).
+This plugin is licenced under [GPL licence](http://www.gnu.org/licenses/gpl-3.0.en.html).
 Server-side plugin uses different free open-source projects licences under Apache 2.0, MIT and LGPL licence.
 
 == Screenshots ==
 
-1. Advanced PDF designer
-1. Simple PDF designer
+1. Advanced PDF designer.
+1. Simple PDF designer.
 
 == Changelog ==
 
-= 1.01 =
+= 1.02 =
+* More translations
+* Validation for checkbox/radio values
+* Improvements for Image and Date/Time format
+* Bugfixes
+* Updated readme.txt
 
-Initial release.
+= 1.01 =
+* Initial release.

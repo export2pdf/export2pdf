@@ -12,11 +12,11 @@
   <thead>
     <tr>
     
-      <th>Name</th>
-      <th>PDF File</th>
-      <th>Form</th>
-      <th class="column-date">Entries</th>
-      <th class="column-date">ID</th>
+      <th><?php _e( 'Template', 'export2pdf' ); ?></th>
+      <th><?php _e( 'PDF File', 'export2pdf' ); ?></th>
+      <th><?php _e( 'Form', 'export2pdf' ); ?></th>
+      <th class="column-date"><?php _e( 'Entries', 'export2pdf' ); ?></th>
+      <th class="column-date"><?php _e( 'ID', 'export2pdf' ); ?></th>
       
     
     </tr>
@@ -44,7 +44,7 @@
             <span class="trash">
               <a 
                 href="<?php echo $controller->action_url( 'delete', array( 'template' => $template->id() ) ); ?>"
-                onclick="return confirm('Are you sure you want to delete this template?');"
+                onclick="return confirm('<?php echo addslashes( __( 'Are you sure you want to delete this template?', 'export2pdf' ) ); ?>');"
               ><?php _e( 'Trash' ); ?></a>
             </span>
           </div>  

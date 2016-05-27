@@ -10,14 +10,14 @@
   <div class="export2pdf-designer-loading-message">
     <p class="description text-center">
       <img src="<?php echo admin_url( 'images/wpspin_light.gif' ); ?>" alt="Loading..." width="16" height="16" />
-      Loading...
+      <?php _e( 'Loading', 'export2pdf' ); ?>...
     </p>
   </div>
 
   <div class="export2pdf-pdf-designer">
 
     <p class="description text-center">
-      Your PDF file is shown below. Click on a PDF form field to change its options.
+      <?php _e( 'Your PDF file is shown below. Click on a PDF form field to change its options.', 'export2pdf' ); ?>
     </p>
 
     <div class="export2pdf-designer">

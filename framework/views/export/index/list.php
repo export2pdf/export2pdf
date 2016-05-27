@@ -28,7 +28,7 @@
   </select>
   
   <?php if ( ! $is_modal ): ?>
-    <a class="button" href="<?php echo \Export2Pdf\Controller::url_for( 'templates', 'edit_step1' ); ?>">New Template</a>
+    <a class="button" href="<?php echo \Export2Pdf\Controller::url_for( 'templates', 'edit_step1' ); ?>"><?php _e( 'New Template', 'export2pdf' ); ?></a>
   <?php endif; ?>
 
 </fieldset>

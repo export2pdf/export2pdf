@@ -163,17 +163,34 @@ class Format
   {
   
     // Get mapped field value
-    $value = $map->value()->get_value();
+    $value       = $map->value();
+    $field_value = $value->get_value();
     
     try
     {
-      $value = $map->format()->process( $value, $map->options_array() );
+    
+      $format = $map->format();
+    
+      // If this is a date/time format, and $raw_value is set, then use $raw_value
+      if ( 
+            $value->raw_value 
+        and is_numeric( $value->raw_value )
+        and ( strtotime( date('d-m-Y H:i:s', $value->raw_value ) ) === (int)$value->raw_value )
+        and ( $format instanceof Format_Date )
+      )
+      {
+        $field_value = $value->raw_value;
+      }
+    
+      // Pass it on on to format corresponding class
+      $field_value = $format->process( $field_value, $map->options_array() );
+      
     }
     catch ( Exception $e )
     {
     }
     
-    return $value;
+    return $field_value;
     
   }
 

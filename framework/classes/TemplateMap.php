@@ -68,7 +68,7 @@ class TemplateMap extends Model
     {
     
       // Option exists. Get it from the database
-      $option = TemplateMapOption::get( $option->id );
+      $option = $option[ 0 ];
     
     }
     
@@ -241,9 +241,10 @@ class TemplateMap extends Model
     // Reset cached template maps
     $this->template->maps = NULL;
     
-    // Call parent methid
+    // Call parent method
     // Saves to the DB
     parent::save();
+    
   }
   
   /**
@@ -261,7 +262,14 @@ class TemplateMap extends Model
     
     foreach ( $maps as $map )
     {
-      $map->value = $entry->value( $map->source() );
+    
+      $pdf_field       = $map->field();
+      $form_field      = $map->source();
+      $form_value      = $entry->value( $form_field );
+      
+      $form_value->map = $map;
+      $map->value      = $form_value;
+      
     }
     
     return $maps;

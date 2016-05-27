@@ -20,6 +20,12 @@ class Db
   
   public static $columns = array();
   
+  /**
+   * Execute a raw MySQL query
+   *
+   * @param $query string MySQL query
+   * @return array Array of stdClass objects representing MySQL rows
+   */
   public static function query( $query )
   {
     
@@ -102,8 +108,16 @@ class Db
    */
   public static function count( $table, $where = null )
   {
+  
     $where = self::format_where( $where );
-    return Db::get_var( "SELECT COUNT(*) FROM $table WHERE $where" );
+    $table = static::$prefix . $table;
+    $query = "SELECT COUNT(*) FROM $table WHERE $where";
+    
+    export2pdf_log( 'db', $query );
+    
+    global $wpdb;
+    return $wpdb->get_var( $query );
+    
   }
   
   /**

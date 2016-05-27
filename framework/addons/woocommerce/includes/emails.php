@@ -1,5 +1,8 @@
 <?php
 
+if ( ! defined( 'EXPORT2PDF_LOADED' ) ) 
+  die();
+
 /**
  * E-mail actions for WooCommerce
  */

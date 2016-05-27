@@ -14,6 +14,9 @@ class Shortcode
   
   const NAME = 'unknown_shortcode';
   
+  public static $defaults = array(
+  );
+  
   /**
    * Parse shortcode arguments
    * 
@@ -24,15 +27,10 @@ class Shortcode
   public static function parse_arguments( $attributes = array() )
   {
     
-    // Default options
-    // TODO: set default options here, add security key
-    $defaults = array(
-    );
+    // Merge default options with supplied arguments
+    $attributes = array_merge( static::$defaults, $attributes );
     
-    // Merge with supplied arguments
-    $attributes = array_merge( $attributes, $defaults );
-    
-    // TODO: Process arguments (validate, filter, ...)
+    // Process arguments (validate, filter, ...)
     
     return $attributes;
   
@@ -56,7 +54,7 @@ class Shortcode
   {
 
     // Format and validate options
-    $attributes = self::parse_arguments( $attributes );
+    // $attributes = self::parse_arguments( $attributes );
     
     // Reduce to WP format
     $keys   = array_keys( $attributes );

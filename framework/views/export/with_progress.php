@@ -10,7 +10,14 @@
   
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     
-    <title>Downloading <?php echo $this->filename(); ?></title>
+    <title><?php 
+    
+      printf(
+        __( 'Downloading %s ...', 'export2pdf' ),
+        $this->filename()
+      );
+    
+    ?></title>
     
     <style type="text/css">
       <?php

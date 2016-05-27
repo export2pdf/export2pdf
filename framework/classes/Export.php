@@ -145,7 +145,11 @@ class Export
     try
     {
 
-      Progress::step( "Exporting...", 5, 100 );
+      Progress::step( 
+        __( 'Exporting...', 'export2pdf' ), 
+        5, 
+        100 
+      );
       
       Progress::pulsate();
     
@@ -168,7 +172,14 @@ class Export
       
       $download_link = '?' . http_build_query( $current_request );
       
-      Progress::step( "Downloading <a href='" . $download_link . "'>" . $this->filename() . "</a>...", 100 );
+      Progress::step( 
+        sprintf(
+          __( 'Downloading <a href="%s">%s</a>...', 'export2pdf' ), 
+          $download_link,
+          $this->filename()
+        ),
+        100
+      );
       
       // Progress::pulsate( 2 );
     

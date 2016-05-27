@@ -14,6 +14,11 @@ class ShortcodeExport extends Shortcode
   
   const NAME = 'export2pdf';
   
+  public static $defaults = array(
+    'as_link' => 0,
+    'title'   => 'Download',
+  );
+  
   /**
    * Generate shortcode
    *
@@ -47,11 +52,10 @@ class ShortcodeExport extends Shortcode
     // Format and validate options
     $options[ 'entry' ]    = $entry->id();
     $options[ 'template' ] = $template->id();
-    $attributes = self::parse_arguments( $options );
     
-    $attributes[ 'action' ] = 'export2pdf-download';
+    $options[ 'action' ] = 'export2pdf-download';
     
-    $link = admin_url( 'admin-ajax.php' ) . '?' . http_build_query( $attributes );
+    $link = admin_url( 'admin-ajax.php' ) . '?' . http_build_query( $options );
     
     return $link;
   
@@ -67,7 +71,8 @@ class ShortcodeExport extends Shortcode
   public static function process( $attributes = array() )
   {
     
-    extract( $attributes );
+    $options = self::parse_arguments( $attributes );
+    extract( $options );
     
     try
     {
@@ -82,14 +87,34 @@ class ShortcodeExport extends Shortcode
     
       $entry = $template->entry( $entry );
       
-      return static::generate_link( $template, $entry, $attributes );
+      $link = static::generate_link( $template, $entry, $attributes );
+      
+      // Generate as link unless 
+      if ( ! $is_link )
+      {
+      
+        $title = __( $title, 'export2pdf' );
+      
+        $link = sprintf(
+          '<a href="%s" target="_blank" title="%s" target="download_window">%s</a>',
+          $link,
+          esc_attr( $title ),
+          $title
+        );
+        
+      }
+      
+      return $link;
     
     }
     catch ( Exception $e )
     {
+    
       // Something went wrong
-      // TODO: remove error message
-      return $e->getMessage();
+      
+      // For debugging:
+      // return $e->getMessage();
+      
     }
     
     return '';

@@ -35,8 +35,10 @@ class Export_Pdf extends Export
       $value = Format::map( $map );
       
       // Add a row in JSON file
-      $row[ 'format' ] = $map->formatting;
       $row[ 'value' ]  = $value . '';
+      
+      if ( ! empty( $map->formatting ) )
+        $row[ 'format' ] = $map->formatting;
       
       $fields->{ $key } = $row;
       
@@ -67,11 +69,17 @@ class Export_Pdf extends Export
     // Prepare a JSON file for Java program
     $json_data = json_encode( $this->prepare_values() );
     
+    // For debugging:
+    // print_r( $this->prepare_values() ); exit;
+    
     if ( class_exists( "Export2Pdf\\Export2PdfOffline" ) )
     {
     
       // We're in offline mode. Export PDF directly
-      Progress::step( "Preparing file...", 30, 100 );
+      Progress::step( 
+        __( 'Preparing file...', 'export2pdf' ),
+        30, 100 
+      );
       Progress::pulsate();
       $binary_pdf_output = ApiRequest_ExportPdf::perform( $this->template_path(), $json_data );
     
@@ -82,10 +90,10 @@ class Export_Pdf extends Export
       try
       {
       
-        if ( Debug::enabled() )
-          Progress::step( "Exporting...", 10, 70 );
-        else
-          Progress::step( "Exporting...", 10, 70 );
+        Progress::step( 
+          __( 'Exporting...', 'export2pdf' ),
+          10, 70 
+        );
       
         // Try to export a PDF
         // If the PDF hasn't been uploaded yet, then PdfNotUploaded_Error exception will be thrown
@@ -96,17 +104,31 @@ class Export_Pdf extends Export
       {
 
         if ( Debug::enabled() )
+        {
           Progress::step( "Uploading file to server...", 10, 70 );
+        }
         else
-          Progress::step( "Exporting...", 10, 70 );
+        {
+          Progress::step( 
+            __( 'Exporting...', 'export2pdf' ), 
+            10, 70 
+          );
+        }
 
         // Upload PDF
         ApiRequest_UploadPdf::perform( $this->template_path(), $this->hash() );
         
         if ( Debug::enabled() )
+        {
           Progress::step( "Downloading file from server...", 70, 100 );
+        }
         else
-          Progress::step( "Exporting...", 70, 100 );
+        {
+          Progress::step( 
+            __( 'Exporting...', 'export2pdf' ), 
+            70, 100 
+          );
+        }
         
         // And export data
         $binary_pdf_output = ApiRequest_ExportPdf::perform( 'hash:' . $this->hash(), $json_data );

@@ -20,6 +20,18 @@ class TranslationsController extends Controller
     if ( Tools::is_post() )
     {
     
+      // Delete a translation
+      if ( isset( $_POST[ 'remove_translation' ] ) )
+      {
+      
+        $translation_id = $_POST[ 'remove_translation' ];
+        $translation    = Translation::get( $translation_id );
+        
+        $translation->destroy();
+        wp_die();
+        
+      }
+    
       // Save translations
       $translations = (array) stripslashes_deep( $_POST[ 'translations' ] );
       foreach ( $translations as $id => $translated_text )
@@ -27,6 +39,7 @@ class TranslationsController extends Controller
       
         $translation             = Translation::get( $id );
         $translation->translated = $translated_text;
+        $translation->is_new     = 0;
         $translation->save();
       
       }

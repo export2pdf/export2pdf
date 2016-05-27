@@ -23,14 +23,13 @@
     
     <?php endif; ?>
   
-    <table class="wp-list-table widefat fixed striped pages">
+    <table class="wp-list-table widefat striped pages">
 
       <thead>
         <tr>
         
-          <th>Original</th>
-          <th>Translated</th>
-          
+          <th colspan="2"><?php _e( 'Original', 'export2pdf' ); ?></th>
+          <th><?php _e( 'Translated', 'export2pdf' ); ?></th>
         
         </tr>
       </thead>
@@ -39,13 +38,28 @@
       
         <?php foreach ( $translations as $translation ): ?>
         
-          <tr>
+          <tr data-id="<?php echo $translation->id(); ?>" class="<?php if ( ! $translation->translated ) echo 'export2pdf-not-translated'; ?>">
           
-            <td>   
+            <!-- Delete translation link -->
+          
+            <td width="10">
+              <a 
+                href="#" 
+                class="export2pdf-delete-translation" 
+                title="<?php _e( 'Delete this translation', 'export2pdf' ); ?>"
+                onclick="return confirm('<?php echo addslashes( __( 'Do you really want to remove this translation?' , 'export2pdf' ) ); ?>');"
+                ><span class="dashicons dashicons-no"></span></a>
+            </td>
+          
+            <!-- English text -->
+          
+            <td width="50%">   
               <?php echo htmlspecialchars( $translation->original ); ?>
             </td>
      
-            <td>
+            <!-- Translated text -->
+            
+            <td width="50%">
             
               <input
                 type="text"

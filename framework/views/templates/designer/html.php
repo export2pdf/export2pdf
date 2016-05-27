@@ -10,14 +10,14 @@
   <div class="export2pdf-designer-loading-message">
     <p class="description text-center">
       <img src="<?php echo admin_url( 'images/wpspin_light.gif' ); ?>" alt="Loading..." width="16" height="16" />
-      Loading...
+      <?php _e( 'Loading', 'export2pdf' ); ?>...
     </p>
   </div>
 
   <div class="export2pdf-html-designer">
 
     <p class="description text-center">
-      Text that you write below will be transformed into a PDF.
+      <?php _e( 'Text that you write below will be transformed into a PDF.', 'export2pdf' ); ?>
     </p>
 
     <input type="hidden" name="template" value="<?php echo $template->id(); ?>" />

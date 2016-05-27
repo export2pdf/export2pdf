@@ -28,6 +28,19 @@ class Format_ImagePdf extends Format
     return ( $this->template and ! ( $this->template instanceof TemplateHtml ) );
   }
   
+  public function process( $value, $options = array() )
+  {
+    
+    $value = Tools::trim( $value );
+    
+    // If <img /> tag in HTML format is supplied as $value, then extract src attribute
+    if ( preg_match( '/<img.*?src=["\']{1}([^"\']+)["\']{1}/', $value, $matches ) )
+      $value = $matches[ 1 ];
+    
+    return $value;
+    
+  }
+  
   public function show_options( $map = NULL )
   {
     

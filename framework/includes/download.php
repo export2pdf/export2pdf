@@ -7,7 +7,7 @@ if ( ! defined( 'EXPORT2PDF_LOADED' ) )
 function export2pdf_download_file()
 {
 
-  export2pdf_log( 'download',"Starting AJAX download action" );
+  export2pdf_log( 'download', "Starting AJAX download action" );
 
   try
   {
@@ -28,14 +28,14 @@ function export2pdf_download_file()
     if ( $use_progress_indicator )
     {
     
-      export2pdf_log( 'download',"Exporting with progress indicator" );
+      export2pdf_log( 'download', "Exporting with progress indicator" );
       $export->read_with_progress();
       
     }
     else
     {
     
-      export2pdf_log( 'download',"Exporting directly to the browser" );
+      export2pdf_log( 'download', "Exporting directly to the browser" );
       $export->read();
       
     }
@@ -48,7 +48,7 @@ function export2pdf_download_file()
     
   }
   
-  export2pdf_log( 'download',"Finished AJAX download action" );
+  export2pdf_log( 'download', "Finished AJAX download action" );
 
   // Clean up temporary files and folders
   \Export2Pdf\TempFile::clean_up();

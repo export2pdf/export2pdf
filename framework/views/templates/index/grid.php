@@ -44,13 +44,13 @@
         
         <div class="thumbnail thumbnail-portrait">
           <img 
-            alt="Add Template" 
+            alt="<?php _e( 'New Template', 'export2pdf' ); ?>" 
             src="<?php echo \Export2Pdf\Framework::assets_url() . 'images/plus_icon.jpg'; ?>"
           />
         </div>
         <div class="filename">
           <div>
-            New Template
+            <?php _e( 'New Template', 'export2pdf' ); ?>
           </div>
         </div>
         

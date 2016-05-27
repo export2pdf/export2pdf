@@ -57,11 +57,21 @@ add_action( 'admin_menu', function () {
   if ( \Export2Pdf\Translation::enabled() ) 
   {
   
+    // Count all new translations
+    $count = \Export2Pdf\Translation::count(array(
+      'is_new'   => 1,
+      'language' => \Export2Pdf\Translation::current_language(),
+    ));
+    
+    $badge = '';
+    if ( $count > 0 )
+      $badge = ' <span class="update-plugins count-' . $count . '"><span class="plugin-count">' . $count . '</span></span>';
+  
     // Main manu item -> Under the Hood
     $hook_suffix = add_submenu_page(
       'export2pdf',                                 // Parent item slug
       __( 'Translations', 'export2pdf' ),           // Page title
-      __( 'Translations', 'export2pdf' ),           // Menu title
+      __( 'Translations', 'export2pdf' ) . $badge,  // Menu title
       'administrator',                              // Permissions
       \Export2Pdf\TranslationsController::PAGE,     // Slug
       'export2pdf_translations'                     // Callback
